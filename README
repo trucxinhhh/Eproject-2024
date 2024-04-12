@@ -1,0 +1,5 @@
+tạo file txt thư viện 
+ pip freeze -l > lib.txt
+cài thư viện từ file txt
+ pip install -r requirements.txt
+

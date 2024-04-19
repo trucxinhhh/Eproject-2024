@@ -3,3 +3,22 @@ tạo file txt thư viện
 cài thư viện từ file txt
  pip install -r requirements.txt
 
+B1: Lấy dữu liệu từ server về chia thành hai tập A, B cho 2 thiết bị. 
+  - Chạy file Get_Data.py
+    Input: api gọi tới server yêu cầu dữ liệu
+    Output: 2 tập dữ liệu thuần của từng thiết bị gồm: I,P,U,lux và thời gian nhận dữ liệu
+B2: chạy file TXL.py để chuẩn hoá và sàn lọc dữ liệu 
+  - Lưu ý: ở file này khi chọn số ngõ vào là n thì ở các file còn lại THAY ĐỔI n = với số ngõ vào đạ chọn.
+    Input: Tập dữ liệu thuần trước khi đưa vào học máy
+    Output: Tập dữ liệu có tên là Book2.csv dã được xử lý và chuẩn hoá
+B3: chạy file train_RNN.py (ở đây đã update thành LSTM)
+  - Tại dòng số 11, THAY ĐỔI giá trị n = với giá trị đã nhập ở BƯỚC 2
+    Input : tập dữ liệu đã được xử lý (Book2.csv)
+    Output: 2 model.keras về P, lux
+  - LƯU Ý: Khi train xong 1 model sẽ trả về 1 bảng đồ thị để xem hàm đánh giá, hãy kiểm tra và TẮT để mô hình có thể tiếp trục train
+B4: Kiểm tra dự đoán bằng file test.py 
+    Input: Model đã train và tập dữ liệu test để dự đoán 
+    Output: 2 tập .csv đã được dự đoán theo thời gian (y_final_L.csv, y_final_P.csv)
+B5: Xem hình ảnh của model một cách trực quang hơn = file plot.py
+    Input: dữ liệu đã được dự đoán = model ( tập y_final_L.csv, y_final_P.csv) và dữ liệu thực tế
+    Output: Đồ thị chuẩn đoán
